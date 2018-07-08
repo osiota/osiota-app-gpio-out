@@ -4,9 +4,9 @@ exports.init = function(node, app_config, main, host_info) {
 	if (typeof app_config.pin !== "number") {
 		throw new Error("gpio: pin not defined.");
 	}
-	var invert = false;
+	var not_invert = true;
 	if (typeof app_config.invert) {
-		invert = true;
+		not_invert = false;
 	}
 
 	var pin = app_config.pin;
@@ -23,9 +23,12 @@ exports.init = function(node, app_config, main, host_info) {
 		if (err) throw err;
 	});
 
+	node.announce({
+		"type": "output.state"
+	});
 	node.publish(undefined, value);
 	node.rpc_set = function(reply, value, time) {
-		gpio.write(pin, value ^ invert, function(err) {
+		gpio.write(pin, value ^ not_invert, function(err) {
 			if (err) return reply(err);
 
 			node.publish(time, value);
