@@ -42,9 +42,12 @@ exports.init = function(node, app_config, main, host_info) {
 	return [
 		node,
 		function() {
+			/*
+			// There is no unexport function:
 			gpio.setup(pin, gpio.DIR_IN, function(err) {
 				if (err) throw err;
 			});
+			*/
 		}
 	];
 };
