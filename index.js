@@ -23,9 +23,9 @@ exports.init = function(node, app_config, main, host_info) {
 		if (err) throw err;
 	});
 
-	node.announce({
+	node.announce([{
 		"type": "output.state"
-	});
+	}, app_config.metadata]);
 	node.publish(undefined, value);
 	node.rpc_set = function(reply, value, time) {
 		gpio.write(pin, value ^ not_invert, function(err) {
