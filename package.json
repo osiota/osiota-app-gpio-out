@@ -6,7 +6,10 @@
   "dependencies": {
     "rpi-gpio": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mockery": "^2.1.0",
+    "tape": "^5.2.2"
+  },
   "author": "",
   "license": ""
 }
