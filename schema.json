@@ -1,0 +1,22 @@
+{
+	"type": "object",
+	"title": "osiota application GPIO out",
+	"properties": {
+		"pin": {
+			"type": "number",
+			"title": "GPIO pin number"
+		},
+		"initial_value": {
+			"type": "number",
+			"title": "Initial Value",
+			"enum": [0, 1],
+			"enum_titles": ["off", "on"]
+		},
+		"invert": {
+			"type": "boolean",
+			"title": "Invert value",
+			"description": "e.g. for a pull down circuit"
+		}
+	},
+	"additionalProperties": false
+}
