@@ -24,7 +24,7 @@
 		},
 		"invert": {
 			"type": "boolean",
-			"title": "Invert value",
+			"title": "Invert Output Value",
 			"description": "e.g. for a pull down circuit",
 			"examples": [ true ]
 		}
