@@ -1,15 +1,17 @@
 {
 	"type": "object",
 	"title": "osiota application GPIO out",
-	"description": "This application allows controlling GPIO ports.",
+	"description": "This application allows controlling GPIO pins.",
 	"properties": {
 		"pin": {
 			"type": "number",
-			"title": "GPIO pin number"
+			"title": "Pin number",
+			"description": "Not GPIO number ([See pin naming](https://www.npmjs.com/package/rpi-gpio#pin-naming))",
+			"examples": [ 7 ]
 		},
 		"initial_value": {
 			"type": "number",
-			"title": "Initial Value",
+			"title": "Initial Output Value",
 			"enum": [
 				0,
 				1
@@ -17,12 +19,14 @@
 			"enum_titles": [
 				"off",
 				"on"
-			]
+			],
+			"examples": [ 0 ]
 		},
 		"invert": {
 			"type": "boolean",
 			"title": "Invert value",
-			"description": "e.g. for a pull down circuit"
+			"description": "e.g. for a pull down circuit",
+			"examples": [ true ]
 		}
 	},
 	"additionalProperties": false
