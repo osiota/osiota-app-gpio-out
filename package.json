@@ -1,6 +1,6 @@
 {
   "name": "osiota-app-gpio-out",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This application allows controlling GPIO ports",
   "main": "index.js",
   "scripts": {
