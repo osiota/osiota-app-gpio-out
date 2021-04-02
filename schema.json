@@ -1,6 +1,7 @@
 {
 	"type": "object",
 	"title": "osiota application GPIO out",
+	"description": "This application allows controlling GPIO ports.",
 	"properties": {
 		"pin": {
 			"type": "number",
@@ -9,8 +10,14 @@
 		"initial_value": {
 			"type": "number",
 			"title": "Initial Value",
-			"enum": [0, 1],
-			"enum_titles": ["off", "on"]
+			"enum": [
+				0,
+				1
+			],
+			"enum_titles": [
+				"off",
+				"on"
+			]
 		},
 		"invert": {
 			"type": "boolean",

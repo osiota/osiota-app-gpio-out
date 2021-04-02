@@ -1,18 +1,24 @@
 {
-  "name": "er-app-gpio-out",
+  "name": "osiota-app-gpio-out",
   "version": "1.0.0",
-  "description": "",
+  "description": "This application allows controlling GPIO ports",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "doc": "osiota-dev-doc-jsonschema --schema schema.json --app $npm_package_name"
   },
   "dependencies": {
     "rpi-gpio": "^1.0.0"
   },
   "devDependencies": {
     "mockery": "^2.1.0",
-    "tape": "^5.2.2"
+    "tape": "^5.2.2",
+    "osiota-dev": "^1.x"
   },
-  "author": "",
-  "license": ""
+  "author": "Simon Walz and others",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/osiota/osiota-app-gpio-out.git"
+  }
 }
