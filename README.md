@@ -21,7 +21,7 @@ This application allows controlling GPIO pins.
 |Name|Type|Description|Required|
 |----|----|-----------|--------|
 |**pin**<br/>(Pin number)|`number`|Not GPIO number ([See pin naming](https://www.npmjs.com/package/rpi-gpio#pin-naming))<br/>|yes|
-|**initial_value**<br/>(Initial Output Value)|`number`|Enum: `0`, `1`<br/>|no|
+|**initial\_value**<br/>(Initial Output Value)|`number`|Enum: `0`, `1`<br/>|no|
 |**invert**<br/>(Invert Output Value)|`boolean`|e.g. for a pull down circuit<br/>|no|
 
 **Additional Properties:** not allowed<br/>
