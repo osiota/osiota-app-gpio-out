@@ -18,13 +18,13 @@ This application allows controlling GPIO pins.
 
 **Properties**
 
-|Name|Description|Type|
-|----|-----------|----|
-|`pin` (Pin number)|Not GPIO number ([See pin naming](https://www.npmjs.com/package/rpi-gpio#pin-naming))<br/>|number|
-|`initial_value` (Initial Output Value)|Enum: `[0,1]`<br/>|number|
-|`invert` (Invert Output Value)|e.g. for a pull down circuit<br/>|boolean|
+|Name|Type|Description|Required|
+|----|----|-----------|--------|
+|**pin**<br/>(Pin number)|`number`|Not GPIO number ([See pin naming](https://www.npmjs.com/package/rpi-gpio#pin-naming))<br/>|yes|
+|**initial_value**<br/>(Initial Output Value)|`number`|Enum: `0`, `1`<br/>|no|
+|**invert**<br/>(Invert Output Value)|`boolean`|e.g. for a pull down circuit<br/>|no|
 
-**Additional Properties:** `false`<br/>
+**Additional Properties:** not allowed<br/>
 **Example**
 
 ```json

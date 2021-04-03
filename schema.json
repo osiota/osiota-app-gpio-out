@@ -29,5 +29,6 @@
 			"examples": [ true ]
 		}
 	},
+	"required": [ "pin" ],
 	"additionalProperties": false
 }
