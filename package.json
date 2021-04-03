@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "mockery": "^2.1.0",
-    "osiota-dev": "^1.2.1",
+    "osiota-dev": "^1.2.2",
     "tape": "^5.2.2"
   },
   "author": "Simon Walz and others",
