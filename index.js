@@ -40,7 +40,9 @@ exports.init = function(node, app_config, main, host_info) {
 	return [
 		node,
 		function() {
-			gpio.destroy();
+			gpio.destroy(function(err) {
+				if (err) console.error(err);
+			}
 		}
 	];
 };
