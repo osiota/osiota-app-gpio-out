@@ -8,7 +8,7 @@
     "doc": "osiota-dev-doc-jsonschema --schema schema.json --app $npm_package_name"
   },
   "dependencies": {
-    "rpi-gpio": "^1.0.0"
+    "rpi-gpio": "^2.1.7"
   },
   "devDependencies": {
     "mockery": "^2.1.0",
