@@ -37,12 +37,9 @@ exports.init = function(node, app_config, main, host_info) {
 		"type": "output.state"
 	}, app_config.metadata]);
 
-	return [
-		node,
-		function() {
-			gpio.destroy(function(err) {
-				if (err) console.error(err);
-			}
-		}
-	];
+	return [node, function() {
+		gpio.destroy(function(err) {
+			if (err) console.error(err);
+		});
+	}];
 };
