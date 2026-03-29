@@ -21,6 +21,8 @@ try {
 
 var main = new osiota();
 
+const apps = main.application_loader.apps;
+
 const EventEmitter = require('events');
 var e = new EventEmitter();
 
@@ -51,14 +53,14 @@ var fsMock = {
 mockery.registerMock('rpi-gpio', fsMock);
 
 var a;
-test('load app gpio-out', function (t) {
+test('load app gpio-out', async function (t) {
 	t.plan(3);
 
 	e.once("write", function(state) {
 		t.equal(state.pin, 10, "pin");
 		t.equal(state.value, 1, "value");
 	});
-	main.config({
+	await main.config({
 		"app_dir": __dirname+"/",
 		"app": [
 			{
@@ -72,10 +74,9 @@ test('load app gpio-out', function (t) {
 		]
 	});
 
-	// is synchron:
-	t.equal(main.apps["gpio-out"]._id, "gpio-out", "app name");
+	a = apps["GPIO out"];
+	t.equal(a._id, "GPIO out", "app name");
 
-	a = main.apps["gpio-out"];
 });
 
 test('set 0, app gpio-out', function (t) {
@@ -85,7 +86,7 @@ test('set 0, app gpio-out', function (t) {
 		t.equal(state.pin, 10, "pin");
 		t.equal(state.value, 0, "value");
 	});
-	a._node.rpc("set", 0);
+	a.node.rpc("set", 0);
 });
 
 test('set 1, app gpio-out', function (t) {
@@ -95,18 +96,18 @@ test('set 1, app gpio-out', function (t) {
 		t.equal(state.pin, 10, "pin");
 		t.equal(state.value, 1, "value");
 	});
-	a._node.rpc("set", 1);
+	a.node.rpc("set", 1);
 });
 
 
-test('load app gpio-out (invert)', function (t) {
+test('load app gpio-out (invert)', async function (t) {
 	t.plan(3);
 
 	e.once("write", function(state) {
 		t.equal(state.pin, 9, "pin");
 		t.equal(state.value, 0, "value");
 	});
-	main.config({
+	await main.config({
 		"app_dir": __dirname+"/",
 		"app": [
 			{
@@ -121,9 +122,8 @@ test('load app gpio-out (invert)', function (t) {
 	});
 
 	// is synchron:
-	t.equal(main.apps["gpio-out_2"]._id, "gpio-out_2", "app name");
-
-	a = main.apps["gpio-out_2"];
+	a = apps["GPIO out 2"];
+	t.equal(a._id, "GPIO out 2", "app name");
 });
 
 test('set 0, app gpio-out (invert)', function (t) {
@@ -133,7 +133,7 @@ test('set 0, app gpio-out (invert)', function (t) {
 		t.equal(state.pin, 9, "pin");
 		t.equal(state.value, 1, "value");
 	});
-	a._node.rpc("set", 0);
+	a.node.rpc("set", 0);
 });
 
 test('set 1, app gpio-out (invert)', function (t) {
@@ -142,6 +142,6 @@ test('set 1, app gpio-out (invert)', function (t) {
 		t.equal(state.pin, 9, "pin");
 		t.equal(state.value, 0, "value");
 	});
-	a._node.rpc("set", 1);
+	a.node.rpc("set", 1);
 });
 
