@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "mockery": "^2.1.0",
-    "osiota-dev": "^1.2.8",
-    "tape": "^5.9.0"
+    "osiota-dev": "^1.2.9",
+    "tape": "^5.10.2"
   },
   "author": "Simon Walz and others",
   "license": "MIT",
